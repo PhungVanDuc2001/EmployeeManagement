@@ -1,4 +1,4 @@
-﻿namespace EmployeeManagement.API.Entities
+﻿namespace EmployeeManagement.API.Enums
 {
     /// <summary>
     /// Tình trạng làm việc 

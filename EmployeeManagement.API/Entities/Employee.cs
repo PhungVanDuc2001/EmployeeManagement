@@ -1,4 +1,7 @@
-﻿namespace EmployeeManagement.API.Entities
+﻿using EmployeeManagement.API.Enums;
+using System.ComponentModel.DataAnnotations;
+
+namespace EmployeeManagement.API.Entities
 {
     /// <summary>
     /// Thông tin nhân viên
@@ -8,16 +11,20 @@
         /// <summary>
         /// Địa chỉ Id
         /// </summary>
-        public  Guid Id { get; set; }  
-        
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Mã Nhân Viên 
         /// </summary>
+        [Required(ErrorMessage ="Mã nhân viên không được để trống")]
+        [MaxLength(20, ErrorMessage ="Mã nhân viên không được vượt quá 20 ký tự")]
         public string Code { get; set; }
 
         /// <summary>
         /// Họ Và Tên 
         /// </summary>
+        [Required(ErrorMessage = "Tên nhân viên không được để trống")]
+        [MaxLength(100, ErrorMessage = "Tên nhân viên không được vượt quá 100 ký tự")]
         public string Fullname { get; set; }
 
         /// <summary>
@@ -33,11 +40,16 @@
         /// <summary>
         /// Số Điện Thoại 
         /// </summary>
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
+        [MaxLength(25, ErrorMessage = "Số điện thoại không được vượt quá 25 ký tự")]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Địa Chỉ Email 
         /// </summary>
+        [Required(ErrorMessage = "Emali không được để trống")]
+        [MaxLength(50, ErrorMessage = "Email không được vượt quá 50 ký tự")]
+        [EmailAddress]
         public string Email { get; set; }
 
         /// <summary>
